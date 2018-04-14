@@ -1,0 +1,15 @@
+WELCOME TO BRANCH CHANGE APPLICATION FORM:
+
+1. How to fill the form:
+	a. Name: Your name shouldn't contain any characters other than alphabets.
+	b. Course, Branch: Before filling this field cross check the full name with what's   		displayed on the officical website of the institute.
+	c. Semester: Assuming that the process of branch change happens only for the 1st year 		students, you are suppossed to enter this value only if it's value is less than 3.
+	d. CGPA: The value of this field should be greater than 9.0 .
+
+2. Instructions:
+	-Open the respective URL (index.php) for the form on a browser(IE8+ supported).
+	-Fill out the data satisfying the constraints in section 1.
+	-If "Failed Connection" error occurs while submitting the form, contact the respective developer <dev@mis.iitism.com> .
+	-If error occurs for respective field, correct the field values and check if they satisfy section 1.
+	-If you see the message "Successfully submitted", your response has been successfully recorded.
+	-For viewing the students whose branches were successfully changed, open the 'pdf.php' file.

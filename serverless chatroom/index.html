@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>An Anonymous Pen on CodePen</title>
+  
+  
+  
+  
+  
+</head>
+
+<body>
+
+  
+<!DOCTYPE html><html lang='en' class=''>
+<head><script src='//static.codepen.io/assets/editor/live/console_runner-ce3034e6bde3912cc25f83cccb7caa2b0f976196f2f2d52303a462c826d54a73.js'></script><script src='//static.codepen.io/assets/editor/live/css_live_reload_init-890dc39bb89183d4642d58b1ae5376a0193342f9aed88ea04330dc14c8d52f55.js'></script><meta charset='UTF-8'><meta name="robots" content="noindex"><link rel="shortcut icon" type="image/x-icon" href="//static.codepen.io/assets/favicon/favicon-8ea04875e70c4b0bb41da869e81236e54394d63638a1ef12fa558a4a835f1164.ico" /><link rel="mask-icon" type="" href="//static.codepen.io/assets/favicon/logo-pin-f2d2b6d2c61838f7e76325261b7195c27224080bc099486ddd6dccb469b8e8e6.svg" color="#111" /><link rel="canonical" href="https://codepen.io/volya/pen/oomegr?q=css+chat&limit=all&type=type-pens" />
+ <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<style class="cp-pen-styles">* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+*:hover,
+*:focus {
+  outline: none;
+}
+
+.chat {
+  width: 100%;
+  max-width: 800px;
+  height: calc(100vh - 50px);
+  min-height: 100%;
+  padding: 15px 30px;
+  margin: 0 auto;
+  overflow-y: scroll;
+  background-color: #fff;
+  transform: rotate(180deg);
+  direction: rtl;
+}
+.chat__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  justify-content: flex-end;
+}
+.chat__message {
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 25px;
+  color: #000;
+  background-color: #e6e7ec;
+  max-width: 600px;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  margin: 15px 0;
+  word-break: break-all;
+  transform: rotate(180deg);
+  direction: ltr;
+}
+.chat__message:after {
+  content: "";
+  width: 20px;
+  height: 12px;
+  display: block;
+  background-image: url("https://stageviewcincyshakes.firebaseapp.com/icon-gray-message.e6296433d6a72d473ed4.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  position: absolute;
+  bottom: -2px;
+  left: -5px;
+}
+.chat__message-own {
+  color: #fff;
+  margin-left: auto;
+  background-color: #00a9de;
+}
+.chat__message-own:after {
+  width: 19px;
+  height: 13px;
+  left: inherit;
+  right: -5px;
+  background-image: url("https://stageviewcincyshakes.firebaseapp.com/icon-blue-message.2be55af0d98ee2864e29.png");
+}
+
+.chat__form {
+  background-color: #e0e0e0;
+}
+.chat__form form {
+  max-width: 800px;
+  margin: 0 auto;
+  height: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+.chat__form input {
+  height: 40px;
+  font-size: 16px;
+  min-width: 90%;
+  padding-left: 15px;
+  background-color: #fff;
+  border-radius: 15px;
+  border: none;
+}
+.chat__form button {
+  width: 10%;
+  height: 100%;
+  font-size: 16px;
+  background-color: transparent;
+  border: none;
+  text-align: center;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.chat__form button:hover {
+  font-weight: bold;
+}
+</style></head>
+  <body>
+    <div class="row">
+      
+              <div class="col-md-6">
+                      <div class="chat">
+                           <div class="chat__wrapper">
+                                <div class="chat__message">
+                                    <div class="date"></div>
+                                   <div>Message #1</div>
+                               </div>
+                              <div class="chat__message chat__message-own">
+                                <div class="date"></div>
+                                <div>Message #2</div>
+                              </div>
+                          </div>
+                      </div>
+
+                      <div class="chat__form">
+                        <form id="chat__form">
+                          <input id="text-message" type="text" placeholder="Type your message here ...">
+                          <button type="submit">Send</button>
+                        </form>
+                      </div>
+                      <div id="result"></div>
+
+              </div>
+                  <div class="col-md-6">
+                                  <div class="chat">
+                                 <div class="chat__wrapper">
+                                      <div class="chat__message">
+                                          <div class="date"></div>
+                                         <div>Message #1</div>
+                                     </div>
+                                    <div class="chat__message chat__message-own">
+                                      <div class="date"></div>
+                                      <div>Message #2</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="chat__form">
+                              <form id="chat__form">
+                                <input id="text-message" type="text" placeholder="Type your message here ...">
+                                <button type="submit">Send</button>
+                              </form>
+                            </div>
+                            <div id="result"></div>
+                    </div>
+   </div>
+    
+<script src='//static.codepen.io/assets/common/stopExecutionOnTimeout-b2a7b3fe212eaa732349046d8416e00a9dec26eb7fd347590fbced3ab38af52e.js'></script><script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+<script >$(function () {
+  $('#chat__form').on('submit', function(e) {
+    e.preventDefault();
+    var message = $('#text-message').val();
+    $('#text-message').val('');
+    var date = new Date().toJSON().slice(0,10).replace(/-/g,'/');
+    $('.chat__wrapper').append('<div class="chat__message chat__message-own"><div class="date">' + date + '</div><div>' + message + '</div></div>')
+  })
+});
+//# sourceURL=pen.js
+</script>
+</body></html>
+  
+  
+
+</body>
+
+</html>

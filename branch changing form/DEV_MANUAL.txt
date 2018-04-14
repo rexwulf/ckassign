@@ -1,0 +1,52 @@
+--------------------PHP FORM FOR BRANCH CHANGE APPLICATION---------------------------
+version: 1.0
+developer: Rishabh Bharti
+--------------------------------------------------------------------------------------
+
+1. Requirements/ Dependencies:
+	-An apache server
+	-fpdf library
+	-MySQl server
+	-PHP >= 5.2
+
+2. Installation:
+	-Copy the fpdf library from www.fpdf.org and copy into the master branch.
+	-Run index.php
+
+3. Structure:
+	-This project is organised using object oriented paradigm.
+	
+	 PART A. USER INTERFACE: (index.php)
+	 		The front end is backed by CSS3 as well as JavaScript.
+	 		The input fields are not constrained using html input fields but explicitly constraint checked with PHP.
+
+	 PART B. THE PHP FORM: (index.php)
+	 		 The HTML end uses POST method to pass the values entered by user to the PHP end in the same file thus allowing easier maintainence. The user's data is organised by creating a class 'student' that has the fields entered by the user as well as the application supporting members to manage the validation as well as insertion of the data entered by the user. The validations checked by the validating members are:
+
+	 		 members           FUNCTION/VALIDATION
+	 		 name_valid()		Regex match for alphabetic strings
+	 		 sem_valid()		Integral constraint
+	 		 gpa_valid()		Floating constraint
+	 		 courseOrBranch()	Checking whether the user hasn't entered both the fields or 
+	 		 					user hasn't left both the fields unfilled.
+	 		 nameSize()			Checking whether user with only a first name has not entered a 						string for course or whether a user with first, middle and last 					name has not entered a string for course change . 
+	 		 validate() 		Returns the validation of all validations.
+	 		 submit_to_db()		Establishes connection with the server database is located in (						by requiring "server.php") and executes an inertion query for 						inserting the user data.
+	 PART C. PDF CREATION: (pdf.php)
+	 			The class 'PDF' inherits from the library class 'FPDF' for meeting the requirements for the members cell(), AddPage(), SetFont(), AddPage(), LoadData() and Output().
+	 			The resource variable 'res' is obtained by quering the database and then each tuple is fetched and printed columnwise into the pdf.
+
+	 PART D. DATABASE: 
+	 			The table 'student' from the database 'test' is used to store the data of applications submitted by users.
+	 			'student' follows the schema :
+	 			   Attribute 	Datatype
+	 			   	id          int(11)    PRIMARY KEY
+	 				name		varchar(100)
+					course		varchar(50)
+					branch		varchar(50)
+					sem			int(11)
+					cgpa		float
+					result		tinyint(1)
+				The result variable will be redundant because of the logic of inserting into the database only when the data satisfies various constraints and making a tradeoff with ambiguous datafeed as well as user satisfaction of the processing of form data. But for the sake of completion of the problem statement its included in this version.	
+
+-----------------------------------------------END--------------------------------------------
